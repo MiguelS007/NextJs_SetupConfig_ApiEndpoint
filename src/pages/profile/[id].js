@@ -20,10 +20,10 @@ export async function getStaticProps(context) {
   );
   const user = await response.data[0];
 
-  await new Promise(res => setTimeout(res, 4000));
+  //await new Promise(res => setTimeout(res, 4000));
 
   return {
-    props: { user }, // will be passed to the page component as props
+    props: { user, revalidate: 10 }, // will be passed to the page component as props
   }
 }
 
