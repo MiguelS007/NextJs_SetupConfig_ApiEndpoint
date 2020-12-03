@@ -26,7 +26,7 @@ export async function getStaticPaths() {
   const response = await Axios.get(
     'https://jsonplaceholder.typicode.com/users',
   );
-  const user = await response.data;
+  const users = await response.data;
 
   const paths = users.map(user => {
     return { params: { id: String(user.id) } };
